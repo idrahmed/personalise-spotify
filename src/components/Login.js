@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Login.css";
-import logo from "./pic.png";
+
 import Button from "@material-ui/core/Button";
 import HeadsetIcon from "@material-ui/icons/Headset";
 
@@ -35,7 +35,7 @@ function Login() {
         LOGIN WiITH SPOTIFY
       </Button>
 
-      <img src={logo} alt="" />
+      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#3f51b5"
