@@ -1,0 +1,120 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(246, 244, 244);
+}
+
+.body {
+  width: 80vw;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  margin-bottom: 100px;
+}
+
+.options {
+  display: flex;
+  margin: 30px 0px 40px 70px;
+  color: #908e8e;
+  margin-bottom: 50px;
+}
+
+.option_element:hover {
+  color: black;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.option_element {
+  margin-right: 70px;
+  border: none;
+  background: none;
+}
+
+.list {
+  counter-reset: section;
+  list-style-type: none;
+}
+
+.list_elements {
+  display: flex;
+  align-items: center;
+  margin: 12.5px 0;
+}
+
+.list_elements::before {
+  counter-increment: section;
+  content: counter(section);
+  margin-right: 25px;
+  color: rgb(133, 125, 125);
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.row:hover {
+  background-color: rgb(238, 235, 235);
+  cursor: pointer;
+}
+
+.row_content {
+  width: 100%;
+}
+
+.titles {
+  margin-left: 15px;
+}
+
+.titles > h4 {
+  color: rgb(133, 125, 125);
+}
+
+.list_elements > img {
+  border-radius: 6px;
+}
+
+.img_tile {
+  height: 64px;
+  width: 64px;
+}
+
+.list a {
+  color: #000000;
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 1300px) {
+  .body {
+    width: 100vw;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+.options {
+  justify-content: space-between;
+  margin-left: 30px;
+}
+.option_element {
+  margin-right: 40px;
+}
+.row {
+  padding: 0 30px;
+}
+.list_elements::before {
+  display: none;
+}
+}
+
+
+
+
+
+
