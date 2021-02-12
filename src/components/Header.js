@@ -71,7 +71,7 @@ function Header({ img, title, user, id, option, useruri, userName }) {
               <h1 className="modal_title">Playlist Created!</h1>
               <Checkmark xxLarge color="#3f50b5" />
               <Button
-                onClick={() => window.open(useruri)}
+                href={useruri}
                 style={{
                   borderRadius: "36px",
                   fontWeight: 550,
