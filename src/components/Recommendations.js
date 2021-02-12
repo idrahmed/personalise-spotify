@@ -73,7 +73,7 @@ function Recommendations({ user, userName, useruri }) {
               <div className="row_content">
                 <a href={track.track.uri}>
                   <li className="list_elements">
-                    <img src={track.track.album.images[2].url} alt="" />
+                    <img className="img_tile" src={track.track.album.images[2].url} alt="" />
                     <div className="titles">
                       <h3>{track.track.album.name} </h3>
                       <h4>{track.track.artists[0].name} </h4>

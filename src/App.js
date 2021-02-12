@@ -32,7 +32,7 @@ function App() {
       if (state) {
     axios.post('/saved-tracks', {
       track_id: state
-    }).then(alert.show(<div style={{ width: '200px', fontSize: '14px'}}>Added to saved tracks</div>))
+    }).then(alert.show(<div style={{fontSize: '13px'}}>Added to saved tracks</div>))
   }
 }
   saveTrack()

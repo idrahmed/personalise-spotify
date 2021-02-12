@@ -10,7 +10,7 @@
   background-color: rgb(255, 255, 255);
   box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.5);
   min-height: 100vh;
-  margin-bottom: 100px !important;
+  margin-bottom: 100px;
 }
 
 .options {
@@ -59,7 +59,7 @@
 }
 
 .row:hover {
-  background-color: rgb(238, 235, 235);
+  background-color: rgb(241, 239, 239);
   cursor: pointer;
 }
 
@@ -109,14 +109,19 @@
 }
 
 @media screen and (max-width: 600px) and (min-width: 479px) {
+
+  .body{
+    margin-bottom: 50px;
+
+  }
   .options {
     margin-left: 50px;
     margin-bottom: 40px;
   }
 
   .img_tile {
-    height: 56px;
-    width: 56px;
+    height: 54px;
+    width: 54px;
   }
   
   .option_element{
@@ -160,10 +165,10 @@
   }
 
   .titles > h3 {
-    font-size: 16px;
+    font-size: 15px;
   }
   .titles > h4 {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 

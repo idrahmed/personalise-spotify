@@ -73,7 +73,6 @@ function Header({ img, title, user, id, option, useruri, userName }) {
               <Button
                 href={useruri}
                 style={{
-                  marginBottom: "20px",
                   borderRadius: "36px",
                   fontWeight: 550,
                 }}

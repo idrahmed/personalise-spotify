@@ -13,7 +13,7 @@ function TopTracks({ useruri, user, userName }) {
   const [option, selectOption] = useState("All Time");
   const [img, setImg] = useState("");
   const id = top_tracks.map((track) => track.uri);
-  const [setState] = useContext(SavedTracksContext);
+  const [state, setState] = useContext(SavedTracksContext);
 
  
 
@@ -92,7 +92,7 @@ function TopTracks({ useruri, user, userName }) {
               <div className="row_content">
                 <a href={track.uri}>
                   <li className="list_elements">
-                    <img src={track.album.images[2].url} alt="" />
+                    <img className="img_tile" src={track.album.images[2].url} alt="" />
                     <div className="titles">
                       <h3>{track.name} </h3>
                       <h4>{track.artists[0].name} </h4>

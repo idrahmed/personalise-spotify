@@ -60,34 +60,13 @@
   flex-direction: column;
   align-items: center;
   height: 30vh;
-  margin: 0 100px;
+  
 }
 
 .modal_title {
+  padding-top: 10px;
   color: rgb(109, 106, 106);
 }
-
-/* @keyframes img {
-  from {width: 0; height: 0;}
-  to {width: 220px; height: 220px}
-}
-
-.modal_img{
-  width: 0px;
-  height: 0px;
-  margin: 15px;
-  border-radius: 12px;
-  transition: transform 500ms ease-in-out;
-  animation-name: img;
-  animation-duration: 600ms;
-  animation-delay: 1000ms;
-  animation-fill-mode: forwards;
-}
-
-.modal_img:hover {
-  transform: scale(1.1);
-} */
-
 
 
 @media screen and (max-width: 991px) and (min-width: 600px) {
