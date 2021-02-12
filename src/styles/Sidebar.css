@@ -1,56 +1,70 @@
 .sidebar {
-    min-height: 80px;
-    background-color: #303033f8;
-    position: fixed;
-    z-index: 1;
-    box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.5);
-    bottom: 0;
-    width: 100vw;
+  height: 80px;
+  background-color: #303033f8;
+  position: fixed;
+  z-index: 1;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  width: 100vw;
 }
 
 .sidebar_icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
 }
 
 .sidebar_element h4 {
-    font-size: 15px;
-    color: rgb(182, 179, 179);
-    margin-top: 5px;
+  font-size: 15px;
+  color: rgb(182, 179, 179);
+  margin-top: 5px;
 }
 
 .sidebar_element .element {
-    color: rgb(182, 179, 179);
+  color: rgb(182, 179, 179);
 }
 
-
-.sidebar_element:hover h4, .sidebar_element:hover .element {
-    color: white;
- }
-
-
-.sidebar_element{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    transition: 200ms color ease-in;
-    margin: 0 4vw;
+.sidebar_element:hover h4,
+.sidebar_element:hover .element {
+  color: white;
 }
 
+.sidebar_element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: 200ms color ease-in;
+  margin: 0 3vw;
+}
 
 .link {
-    color: #FFFFFF;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 800px) {
-    .sidebar_icons{
-        justify-content: space-between;
-        margin-right: 10px;
-    }
+@media screen and (max-width: 900px) {
+  .sidebar_icons {
+    justify-content: space-between;
     
-    }
+  }
+  .sidebar_element h4 {
+      font-size: 14px;
+  }
+}
 
+@media screen and (max-width: 600px) and (min-width: 479px) {
+    .sidebar {
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 479px) and (min-width: 240px) {
+    .sidebar {
+        height: 50px;
+    }
+    .sidebar_element h4 {
+        font-size: 10px;
+    }
+}

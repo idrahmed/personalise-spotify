@@ -9,11 +9,6 @@ import { Checkmark } from "react-checkmark";
 
 function Header({ img, title, user, id, option, useruri, userName }) {
   const [open, setOpen] = useState(false);
-
-  // const [playlistImg, setPlaylistImg] = useState('')
-  // const [playlistURI, setPlaylistURI] = useState('')
-
-
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
@@ -40,58 +35,57 @@ function Header({ img, title, user, id, option, useruri, userName }) {
   return (
     <div className="header">
       <div className="header_left">
-      <a href="https://accounts.spotify.com/en/status">
-        <Tooltip
-          title="Sign Out / Switch Account"
-          placement="right-end"
-          arrow
-          TransitionComponent={Zoom}
-        >
-          
-          <div className="user_logo">
-            <Avatar
-              alt=""
-              src={user}
-              className="element"
-              style={{ color: "white" }}
-            />
-            <h4>{userName}</h4>
-          </div>
-        </Tooltip>
-      </a>
-      <h1 className="header_title">{title}</h1>
-      <div className="header_button">
-        <Button
-          onClick={() => {
-            addNewPlaylist();
-            onOpenModal();
-          }}
-          size="large"
-          style={{ fontWeight: 750, borderRadius: "36px" }}
-          variant="contained"
-        >
-          Create Playlist
-        </Button>
-        <Modal open={open} onClose={onCloseModal} center>
-          <div className="modal_content">
-            <h1 className="modal_title">Playlist Created!</h1>
-            <Checkmark xxLarge color="#3f50b5" />
-            <Button
-              href={useruri}
-              style={{
-                marginBottom: "20px",
-                borderRadius: "36px",
-                fontWeight: 550,
-              }}
-              size="large"
-              color="primary"
-              variant="contained"
-            >
-              View in Spotify
-            </Button>
-          </div>
-        </Modal>
-      </div>
+        <a href="https://accounts.spotify.com/en/status">
+          <Tooltip
+            title="Sign Out / Switch Account"
+            placement="right-end"
+            arrow
+            TransitionComponent={Zoom}
+          >
+            <div className="user_logo">
+              <Avatar
+                alt=""
+                src={user}
+                className="element"
+                style={{ color: "white" }}
+              />
+              <h4>{userName}</h4>
+            </div>
+          </Tooltip>
+        </a>
+        <h1 className="header_title">{title}</h1>
+        <div className="header_button">
+          <Button
+            onClick={() => {
+              addNewPlaylist();
+              onOpenModal();
+            }}
+            size="large"
+            style={{ fontWeight: 750, borderRadius: "36px" }}
+            variant="contained"
+          >
+            Create Playlist
+          </Button>
+          <Modal open={open} onClose={onCloseModal} center>
+            <div className="modal_content">
+              <h1 className="modal_title">Playlist Created!</h1>
+              <Checkmark xxLarge color="#3f50b5" />
+              <Button
+                href={useruri}
+                style={{
+                  marginBottom: "20px",
+                  borderRadius: "36px",
+                  fontWeight: 550,
+                }}
+                size="large"
+                color="primary"
+                variant="contained"
+              >
+                View in Spotify
+              </Button>
+            </div>
+          </Modal>
+        </div>
       </div>
       <img className="header_img" src={img} alt="" />
     </div>

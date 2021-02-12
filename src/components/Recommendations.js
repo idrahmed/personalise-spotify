@@ -5,6 +5,7 @@ import { IconButton } from "@material-ui/core";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import Header from "./Header";
 import { SavedTracksContext } from "./SavedTracksContext";
+import {selectedOption} from './selectedOptionStyle'
 
 function Recommendations({ user, userName, useruri }) {
   const [recommended, setRecommended] = useState([]);
@@ -51,11 +52,7 @@ function Recommendations({ user, userName, useruri }) {
               selectOption("Weekly Mix");
             }}
             className="option_element"
-            style={{
-              color: option === "Weekly Mix" ? "black" : "",
-              textDecoration: option === "Weekly Mix" ? "underline" : "",
-              textUnderlineOffset: option === "Weekly Mix" ? "10px" : "",
-            }}
+            style={option === 'Weekly Mix' ? selectedOption : {}}
           >
             Weekly Mix
           </h2>
@@ -64,11 +61,7 @@ function Recommendations({ user, userName, useruri }) {
               selectOption("Daily Mix");
             }}
             className="option_element"
-            style={{
-              color: option === "Daily Mix" ? "black" : "",
-              textDecoration: option === "Daily Mix" ? "underline" : "",
-              textUnderlineOffset: option === "Daily Mix" ? "10px" : "",
-            }}
+            style={option === 'Daily Mix' ? selectedOption : {}}
           >
             Daily Mix
           </h2>

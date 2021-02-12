@@ -5,6 +5,7 @@ import { IconButton } from "@material-ui/core";
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Header from "./Header";
 import { useAlert } from 'react-alert'
+import {selectedOption} from './selectedOptionStyle'
 
 function TopArtists({ user, userName, useruri }) {
   const [top_artists, setArtists] = useState([]);
@@ -63,11 +64,7 @@ function TopArtists({ user, userName, useruri }) {
               selectOption("All Time");
             }}
             className="option_element"
-            style={{
-              color: option === "All Time" ? "black" : "",
-              textDecoration: option === "All Time" ? "underline" : "",
-              textUnderlineOffset: option === "All Time" ? "10px" : "",
-            }}
+            style={option === 'All Time' ? selectedOption : {}}
           >
             {" "}
             All time{" "}
@@ -77,11 +74,7 @@ function TopArtists({ user, userName, useruri }) {
               selectOption("6 mos");
             }}
             className="option_element"
-            style={{
-              color: option === "6 mos" ? "black" : "",
-              textDecoration: option === "6 mos" ? "underline" : "",
-              textUnderlineOffset: option === "6 mos" ? "10px" : "",
-            }}
+            style={option === '6 mos' ? selectedOption : {}}
           >
             Last 6 months
           </h2>
@@ -90,11 +83,7 @@ function TopArtists({ user, userName, useruri }) {
               selectOption("3 mos");
             }}
             className="option_element"
-            style={{
-              color: option === "3 mos" ? "black" : "",
-              textDecoration: option === "3 mos" ? "underline" : "",
-              textUnderlineOffset: option === "3 mos" ? "10px" : "",
-            }}
+            style={option === '3 mos' ? selectedOption : {}}
           >
             Last month
           </h2>

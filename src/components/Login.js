@@ -1,41 +1,30 @@
 import React from "react";
 import "../styles/Login.css";
-
 import Button from "@material-ui/core/Button";
 import HeadsetIcon from "@material-ui/icons/Headset";
 
-
 function Login() {
-  
   return (
     <div className="login">
-      <nav className="nav">
-        <HeadsetIcon className="icon" fontSize="large" />
-        <ul className="nav_list"> 
-          <li className="nav_item"><a className="nav_link" href='#'>Sign in</a></li>
-          <li className="nav_item"><a className="nav_link" href='#'>About</a></li>
-        </ul>
-      </nav>
       <div className="content">
+        <HeadsetIcon className="icon" fontSize="large" />
         <h1>Listen to your favourite songs</h1>
         <p>
           Using spotify, this app helps you keep track of all your favourite
-          songs and artists you've listened to in the past and provides
-          you with recommendations so you can keep listening to the songs you
-          love.
+          songs and artists you've listened to in the past and provides you with
+          recommendations so you can keep listening to the songs you love.
         </p>
+        <Button
+          className="loginButton"
+          href="https://personalised-spotify.herokuapp.com/callback"
+          variant="contained"
+          color="secondary"
+          size="large"
+        >
+          LOGIN WiITH SPOTIFY
+        </Button>
       </div>
-      <Button
-        className="loginButton"
-        href="https://personalised-spotify.herokuapp.com/callback"
-        variant="contained"
-        color="primary"
-        size="large"
-      >
-        LOGIN WiITH SPOTIFY
-      </Button>
 
-      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#3f51b5"

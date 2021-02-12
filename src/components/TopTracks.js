@@ -2,9 +2,10 @@ import React, { useEffect, useState, useContext } from "react";
 import "../styles/Body.css";
 import axios from "../axios";
 import { IconButton } from "@material-ui/core";
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import Header from "./Header";
-import { SavedTracksContext } from './SavedTracksContext'
+import { SavedTracksContext } from "./SavedTracksContext";
+import {selectedOption} from './selectedOptionStyle'
 
 
 function TopTracks({ useruri, user, userName }) {
@@ -12,8 +13,9 @@ function TopTracks({ useruri, user, userName }) {
   const [option, selectOption] = useState("All Time");
   const [img, setImg] = useState("");
   const id = top_tracks.map((track) => track.uri);
-  const [state, setState] = useContext(SavedTracksContext)
+  const [setState] = useContext(SavedTracksContext);
 
+ 
 
   useEffect(() => {
     if (option === "All Time") {
@@ -30,7 +32,6 @@ function TopTracks({ useruri, user, userName }) {
       });
     }
   }, [option]);
-  
 
   useEffect(() => {
     setImg(
@@ -38,7 +39,6 @@ function TopTracks({ useruri, user, userName }) {
         ?.images[1]?.url
     );
   }, [top_tracks]);
-
 
   return (
     <div className="page">
@@ -58,11 +58,7 @@ function TopTracks({ useruri, user, userName }) {
               selectOption("All Time");
             }}
             className="option_element"
-            style={{
-              color: option === "All Time" ? "black" : "",
-              textDecoration: option === "All Time" ? "underline" : "",
-              textUnderlineOffset: option === "All Time" ? "10px" : "",
-            }}
+            style={option === 'All Time' ? selectedOption : {}}
           >
             {" "}
             All time{" "}
@@ -72,51 +68,44 @@ function TopTracks({ useruri, user, userName }) {
               selectOption("6 mos");
             }}
             className="option_element"
-            style={{
-              color: option === "6 mos" ? "black" : "",
-              textDecoration: option === "6 mos" ? "underline" : "",
-              textUnderlineOffset: option === "6 mos" ? "10px" : "",
-            }}
+            style={option === '6 mos' ? selectedOption : {}}
           >
             Last 6 months
           </h2>
+           
           <h2
             onClick={() => {
               selectOption("3 mos");
             }}
             className="option_element"
-            style={{
-              color: option === "3 mos" ? "black" : "",
-              textDecoration: option === "3 mos" ? "underline" : "",
-              textUnderlineOffset: option === "3 mos" ? "10px" : "",
-            }}
+            style={option === '3 mos' ? selectedOption : {}}
+            
           >
             Last month
           </h2>
+          
         </div>
 
         <ul className="list">
           {top_tracks?.map((track) => (
-            // <a href={track.uri}>
-              <div className="row">
-                <div className="row_content">
+            <div className="row">
+              <div className="row_content">
                 <a href={track.uri}>
-                <li className="list_elements">
-                  <img src={track.album.images[2].url} alt="" />
-                  <div className="titles">
-                    <h3>{track.name} </h3>
-                    <h4>{track.artists[0].name} </h4>
-                  </div>
-                </li>
+                  <li className="list_elements">
+                    <img src={track.album.images[2].url} alt="" />
+                    <div className="titles">
+                      <h3>{track.name} </h3>
+                      <h4>{track.artists[0].name} </h4>
+                    </div>
+                  </li>
                 </a>
-                </div>
-                <div className="favourite">
-                  <IconButton onClick={() => setState(track.id)}>
-                    <FavoriteBorderIcon style={{ color: "de4463" }} />
-                  </IconButton>
-                </div>
               </div>
-            // </a>
+              <div className="favourite">
+                <IconButton onClick={() => setState(track.id)}>
+                  <FavoriteBorderIcon style={{ color: "de4463" }} />
+                </IconButton>
+              </div>
+            </div>
           ))}
         </ul>
       </div>

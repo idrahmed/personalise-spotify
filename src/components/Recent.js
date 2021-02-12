@@ -13,7 +13,7 @@ function Recent({ user, userName, useruri }) {
     recent[Math.floor(Math.random() * recent.length)]?.track.album?.images[1]
       ?.url;
   const option = "";
-  const [state, setState] = useContext(SavedTracksContext);
+  const [setState] = useContext(SavedTracksContext);
 
   useEffect(() => {
     axios.get("/recently-played").then((res) => {
