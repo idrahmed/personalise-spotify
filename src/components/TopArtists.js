@@ -96,7 +96,7 @@ function TopArtists({ user, userName, useruri }) {
             <div className="row_content">
                 <a href={artist.uri}>
               <li className="list_elements">
-                <img className="img_tile" src={artist.images[2].url} alt="" />
+                <img className="img_tile" src={artist.images[2]?.url} alt="" />
                 <div className="titles">
                   <h3>{artist.name} </h3>
                   <h4>{artist.genres.join(", ")} </h4>

@@ -40,7 +40,7 @@ function Recent({ user, userName, useruri }) {
               <div className="row_content">
                 <a href={track.track.uri}>
                   <li className="list_elements">
-                    <img className="img_tile" src={track.track.album.images[2].url} alt="" />
+                    <img className="img_tile" src={track.track.album.images[2]?.url} alt="" />
                     <div className="titles">
                       <h3>{track.track.name} </h3>
                       <h4>{track.track.album.artists[0].name} </h4>
