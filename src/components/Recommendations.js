@@ -6,6 +6,7 @@ import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutline
 import Header from "./Header";
 import { SavedTracksContext } from "./SavedTracksContext";
 import {selectedOption} from './selectedOptionStyle'
+import { motion } from "framer-motion";
 
 function Recommendations({ user, userName, useruri }) {
   const [recommended, setRecommended] = useState([]);
@@ -33,8 +34,17 @@ function Recommendations({ user, userName, useruri }) {
     );
   }, [recommended]);
 
+  const onClick = (id) => {
+    setState(id)
+  }
+
   return (
     <div className="page">
+      <motion.div
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
       <div className="body">
         <Header
           user={user}
@@ -82,7 +92,7 @@ function Recommendations({ user, userName, useruri }) {
                 </a>
               </div>
               <div className="favourite">
-                <IconButton onClick={() => setState(track.track.id)}>
+                <IconButton onClick={() => onClick(track.track.id)}>
                   <FavoriteBorderOutlinedIcon style={{ color: "de4463" }} />
                 </IconButton>
               </div>
@@ -90,6 +100,7 @@ function Recommendations({ user, userName, useruri }) {
           ))}
         </ul>
       </div>
+      </motion.div>
     </div>
   );
 }

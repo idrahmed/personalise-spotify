@@ -10,6 +10,7 @@ import Recommendations from "./components/Recommendations";
 import axios from './axios'
 import { SavedTracksContext } from './components/SavedTracksContext'
 import { useAlert } from 'react-alert'
+import { AnimatePresence} from "framer-motion"
 
 function App() {
   const [user, setUser] = useState('');
@@ -41,27 +42,29 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <AnimatePresence>
         <Switch>
         <Route path="/recommendations">
-        <Sidebar/>
+           <Sidebar/>
             <Recommendations useruri={useruri} user={user} userName={userName}/>
           </Route>
         <Route path="/recently-played">
-        <Sidebar/>
+           <Sidebar/>
             <Recent useruri={useruri} user={user} userName={userName}/>
           </Route>
         <Route path="/topartists">
-              <Sidebar/>
+            <Sidebar/>
             <TopArtists useruri={useruri} user={user} userName={userName}/>
           </Route>
           <Route path="/toptracks">
-          <Sidebar/>
+            <Sidebar/>
             <TopTracks useruri={useruri} user={user} userName={userName}/>
           </Route>
           <Route path="/">
             <Login />
           </Route>
         </Switch>
+        </AnimatePresence>
       </div>
     </Router>
   );

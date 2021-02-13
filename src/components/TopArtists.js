@@ -6,6 +6,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Header from "./Header";
 import { useAlert } from 'react-alert'
 import {selectedOption} from './selectedOptionStyle'
+import { motion } from "framer-motion";
 
 function TopArtists({ user, userName, useruri }) {
   const [top_artists, setArtists] = useState([]);
@@ -48,6 +49,11 @@ function TopArtists({ user, userName, useruri }) {
 
   return (
     <div className="page">
+      <motion.div
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
       <div className="body">
         <Header
           user={user}
@@ -105,7 +111,7 @@ function TopArtists({ user, userName, useruri }) {
               </a>
               </div>
               <div className="favourite">
-                <IconButton onClick={() => {addToSaved(artist.id) }}>
+                <IconButton onClick={() => addToSaved(artist.id)}>
                   <FavoriteBorderIcon  style={{ color: "de4463"}} />
                 </IconButton>
               </div>
@@ -114,6 +120,7 @@ function TopArtists({ user, userName, useruri }) {
           ))}
         </ul>
       </div>
+      </motion.div>
     </div>
   );
 }

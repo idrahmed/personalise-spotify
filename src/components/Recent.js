@@ -5,6 +5,7 @@ import { IconButton } from "@material-ui/core";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import Header from "./Header";
 import { SavedTracksContext } from "./SavedTracksContext";
+import { motion } from "framer-motion";
 
 function Recent({ user, userName, useruri }) {
   const [recent, setRecent] = useState([]);
@@ -20,9 +21,18 @@ function Recent({ user, userName, useruri }) {
       setRecent(res.data);
     });
   }, []);
+  
+  const onClick = (id) => {
+    setState(id)
+  }
 
   return (
     <div className="page">
+      <motion.div
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
       <div className="body">
         <Header
           user={user}
@@ -49,7 +59,7 @@ function Recent({ user, userName, useruri }) {
                 </a>
               </div>
               <div className="favourite">
-                <IconButton onClick={() => setState(track.track.id)}>
+                <IconButton onClick={() => onClick(track.track.id)}>
                   <FavoriteBorderOutlinedIcon style={{ color: "de4463" }} />
                 </IconButton>
               </div>
@@ -57,6 +67,7 @@ function Recent({ user, userName, useruri }) {
           ))}
         </ul>
       </div>
+      </motion.div>
     </div>
   );
 }
