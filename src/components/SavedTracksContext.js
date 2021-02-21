@@ -6,7 +6,7 @@ export const SavedTracksContext = createContext()
 
 function SavedTracksProvider({children}) {
     const[state, setState] = useState(initialState)
-    
+    console.log(state)
     return (
         <SavedTracksContext.Provider value={[state, setState]}>
             {children}

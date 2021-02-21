@@ -20,11 +20,13 @@ const options = {
 
 ReactDOM.render(
   <React.StrictMode>
-    <SavedTracksProvider>
+    
     <AlertProvider template={AlertTemplate} {...options}>
+    <SavedTracksProvider>
     <App />
-    </AlertProvider>
     </SavedTracksProvider>
+    </AlertProvider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

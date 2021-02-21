@@ -7,7 +7,7 @@ import Header from "./Header";
 import { SavedTracksContext } from "./SavedTracksContext";
 import { selectedOption } from "./selectedOptionStyle";
 import { motion } from "framer-motion";
-import { AnimatePresence} from "framer-motion"
+
 
 function TopTracks({ useruri, user, userName }) {
   const [top_tracks, setTracks] = useState([]);
