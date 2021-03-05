@@ -6,12 +6,13 @@ import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutline
 import Header from "./Header";
 import { SavedTracksContext } from "./SavedTracksContext";
 import { motion } from "framer-motion";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 function Recent({ user, userName, useruri }) {
-  const [recent, setRecent] = useState([]);
-  const id = recent.map((track) => track.track.uri);
+  const [recent, setRecent] = useState(null);
+  const id = recent?.map((track) => track.track.uri);
   const img =
-    recent[Math.floor(Math.random() * recent.length)]?.track.album?.images[1]
+    recent?.[Math.floor(Math.random() * recent.length)]?.track.album?.images[1]
       ?.url;
   const option = "";
   const [state, setState] = useContext(SavedTracksContext);
@@ -45,6 +46,19 @@ function Recent({ user, userName, useruri }) {
         />
 
         <ul className="list" style={{ paddingTop: "70px" }}>
+
+        {recent?.length === 0 && <h1 className="no_data">No data to display</h1>}
+
+        {!recent && (
+              <div>
+              <LoadingSkeleton />
+              <LoadingSkeleton />
+              <LoadingSkeleton />
+              <LoadingSkeleton />
+              <LoadingSkeleton />
+              </div>
+            )}
+
           {recent?.map((track) => (
             <div className="row">
               <div className="row_content">

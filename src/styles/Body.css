@@ -53,7 +53,6 @@
 
 .row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0 60px;
 }
@@ -80,8 +79,8 @@
 }
 
 .img_tile {
-  height: 64px;
-  width: 64px;
+  height: 64px !important;
+  width: 64px !important;
 }
 
 .list a {
@@ -89,6 +88,24 @@
   text-decoration: none;
 }
 
+.skeleton_parent {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.skeleton_titles {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.no_data {
+  display: flex;
+  justify-content: center;
+  color: gray;
+  font-weight: 600;
+  margin-top: 100px;
+}
 
 @media screen and (max-width: 1300px) {
   .body {
@@ -120,8 +137,8 @@
   }
 
   .img_tile {
-    height: 54px;
-    width: 54px;
+    height: 54px !important;
+    width: 54px !important;
   }
   
   .option_element{
@@ -147,8 +164,8 @@
   }
 
   .img_tile {
-    height: 48px;
-    width: 48px;
+    height: 48px !important;
+    width: 48px !important;
   }
 
   .option_element{
@@ -169,6 +186,15 @@
   }
   .titles > h4 {
     font-size: 13px;
+  }
+  .no_data {
+    font-size: 16px;
+  }
+  .skeleton_name {
+    width: 200px !important;
+  }
+  .skeleton_artist {
+    width: 150px !important;
   }
 }
 

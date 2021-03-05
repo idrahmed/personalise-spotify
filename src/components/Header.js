@@ -86,7 +86,7 @@ function Header({ img, title, user, id, option, useruri, userName }) {
           </Modal>
         </div>
       </div>
-      <img className="header_img" src={img} alt="" />
+     { img && <img className="header_img" src={img} alt="" /> }
     </div>
   );
 }

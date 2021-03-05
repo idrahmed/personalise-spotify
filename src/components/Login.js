@@ -16,7 +16,8 @@ function Login() {
         </p>
         <Button
           className="loginButton"
-          href="https://personalised-spotify.herokuapp.com/callback"
+          href="https://personalised-spotify.herokuapp.com/login"
+          // http://localhost:9000/login
           variant="contained"
           color="secondary"
           size="large"
