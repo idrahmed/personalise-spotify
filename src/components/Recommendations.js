@@ -88,6 +88,7 @@ function Recommendations({ user, userName, useruri }) {
                 <LoadingSkeleton />
                 <LoadingSkeleton />
                 <LoadingSkeleton />
+                <LoadingSkeleton />
               </div>
             )}
 
