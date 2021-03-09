@@ -17,8 +17,6 @@ function TopArtists({ user, userName, useruri }) {
   const id = top_artists?.map((artist) => artist.id);
   const alert = useAlert();
 
-  console.log(top_artists);
-
   useEffect(() => {
     if (option === "All Time") {
       axios.get("/top-artists/long_term").then((res) => {

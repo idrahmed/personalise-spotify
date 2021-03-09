@@ -24,7 +24,6 @@ function App() {
       setUser(response.data.images[0]?.url);
       setUserName(response.data.display_name)
       setUserUri(response.data.uri)
-      console.log(response.data)
     });
   }, []);
 
